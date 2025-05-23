@@ -169,37 +169,40 @@ c.Else if percentage >= 36: Print “Division = Pass”
 ## PROGRAM:
 ```
 #include <stdio.h>
-#include <string.h>
 
-int main()
-{
-    int m1,m2,m3,total;
-    float per;
-    char div[10];
+int main() {
+    int m1, m2, m3;
+    float tot, per;
 
-   
-    scanf("%d%d%d",&m1,&m2,&m3);
-    total = m1+m2+m3;
-    per = total/3.0;
-    if (per>=60)
-	 strcpy(div,"First");
-    else if (per<60&&per>=48)
-	    strcpy(div,"Second");
-	else
-	    if (per<48&&per>=36)
-		strcpy(div,"Pass");
-	     else
-		strcpy(div,"Fail");
+    scanf("%d %d %d", &m1, &m2, &m3);
 
-      
-       printf("Total Marks = %d\nPercentage = %5.2f\nDivision = %s\n",total,per,div);
-       return 0;
+    tot = m1 + m2 + m3;
+    per = tot / 3;
+
+    printf("Total = %.2f\n", tot);
+    printf("Percentage = %.2f\n", per);
+
+    if (m1 >= 40 && m2 >= 40 && m3 >= 40) {
+        if (per >= 60)
+            printf("Division = First\n");
+        else if (per >= 48)
+            printf("Division = Second\n");
+        else if (per >= 36)
+            printf("Division = Pass\n");
+    } else {
+        printf("Division = Fail\n");
+    }
+
+    return 0;
 }
+
 ```
 
 ## OUTPUT:
 
-![image](https://github.com/user-attachments/assets/e636a767-2478-4a72-8804-650a4f471f12)
+![Screenshot 2025-05-23 133734](https://github.com/user-attachments/assets/c84825e2-8df0-4ae8-b23d-26ed025e01ac)
+
+![Screenshot 2025-05-23 133741](https://github.com/user-attachments/assets/4528fbf0-fceb-4c46-b15f-f53a8b21c047)
 
 ## RESULT:
 The program successfully takes three subject marks, calculates the total and percentage, and correctly determines the division based on predefined grading logic.
