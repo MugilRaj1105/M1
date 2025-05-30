@@ -113,9 +113,7 @@ int main() {
 ```
 ## OUTPUT:
 
-![Screenshot 2025-05-23 134306](https://github.com/user-attachments/assets/94140ed5-48df-4e54-9132-2d18d1d7443e)
-
-![Screenshot 2025-05-23 134315](https://github.com/user-attachments/assets/f6019eb2-4c49-43e2-a1ef-6649d5553950)
+![Screenshot 2025-05-30 140410](https://github.com/user-attachments/assets/64766153-3cd0-4791-9ef8-6c59c70b0d3f)
 
 ## RESULT:
 Thus the program to find minimum between two fraction numbers using conditional operator or ternary operator has been executed successfully.
@@ -180,38 +178,40 @@ c.Else if percentage >= 36: Print “Division = Pass”
 #include <stdio.h>
 
 int main() {
-    int m1, m2, m3;
-    float tot, per;
+    int m1, m2, m3, total;
+    float percentage;
 
+    printf("Enter marks of three subjects:\n");
     scanf("%d %d %d", &m1, &m2, &m3);
 
-    tot = m1 + m2 + m3;
-    per = tot / 3;
+   
+    total = m1 + m2 + m3;
+    percentage = total / 3.0;
 
-    printf("Total = %.2f\n", tot);
-    printf("Percentage = %.2f\n", per);
+    
+    printf("Total Marks = %d\n", total);
+    printf("Percentage = %.2f%%\n", percentage);
 
-    if (m1 >= 40 && m2 >= 40 && m3 >= 40) {
-        if (per >= 60)
-            printf("Division = First\n");
-        else if (per >= 48)
-            printf("Division = Second\n");
-        else if (per >= 36)
-            printf("Division = Pass\n");
+   
+    if (m1 < 33 || m2 < 33 || m3 < 33) {
+        printf("Result: Fail (One or more subjects below 33)\n");
+    } else if (percentage >= 60) {
+        printf("Result: First Division\n");
+    } else if (percentage >= 50) {
+        printf("Result: Second Division\n");
+    } else if (percentage >= 40) {
+        printf("Result: Pass\n");
     } else {
-        printf("Division = Fail\n");
+        printf("Result: Fail\n");
     }
 
     return 0;
 }
-
 ```
 
 ## OUTPUT:
 
-![Screenshot 2025-05-23 133734](https://github.com/user-attachments/assets/c84825e2-8df0-4ae8-b23d-26ed025e01ac)
-
-![Screenshot 2025-05-23 133741](https://github.com/user-attachments/assets/4528fbf0-fceb-4c46-b15f-f53a8b21c047)
+![WhatsApp Image 2025-05-30 at 14 08 05_7dfd2b50](https://github.com/user-attachments/assets/014a4243-8dd9-470f-af63-3f5b7a1f931e)
 
 ## RESULT:
 The program successfully takes three subject marks, calculates the total and percentage, and correctly determines the division based on predefined grading logic.
